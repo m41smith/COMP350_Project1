@@ -22,16 +22,23 @@ void sum_p(int n, int* answer) {
 }
 
 int main(int argc, char* argv[]) {
-    int temp = atoi(argv[1]);
-    // int n;
-    // printf("Enter a positive integer: ");
-    // scanf("%d", &n);
-    int ans = sum(temp);
-    printf("Sum is %d\n", ans);
+    int n;
+    n = atoi(argv[1]);
+    if (n > 0) {
+        int ans = sum(n);
+        printf("Sum is %d\n", ans);
+        int ans2;
+        sum_p(n, &ans2);
+        printf("Sum_p is %d\n", ans2);
+    } else {
+        printf("Enter a positive integer: ");
+        scanf("%d", &n);
+        int ans = sum(n);
+        printf("Sum is %d\n", ans);
 
-    int ans2;
-    sum_p(3, &ans2);
-    printf("Sum_p is %d\n", ans2);
-
+        int ans2;
+        sum_p(n, &ans2);
+        printf("Sum_p is %d\n", ans2);
+    }
     return 0;
 }
