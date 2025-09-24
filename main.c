@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int sum(int n) {
     int total = 0; // Where total sum will be stored
@@ -20,11 +21,12 @@ void sum_p(int n, int* answer) {
     *answer = total;
 }
 
-int main(void) {
-    int n;
-    printf("Enter a positive integer: ");
-    scanf("%d", &n);
-    int ans = sum(n);
+int main(int argc, char* argv[]) {
+    int temp = atoi(argv[1]);
+    // int n;
+    // printf("Enter a positive integer: ");
+    // scanf("%d", &n);
+    int ans = sum(temp);
     printf("Sum is %d\n", ans);
 
     int ans2;
